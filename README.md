@@ -1,1 +1,2 @@
-C-Reload 42
+# Libft first project of 42
+
