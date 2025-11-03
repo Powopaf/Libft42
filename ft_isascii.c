@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pifourni <pifourni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/03 17:37:49 by pifourni          #+#    #+#             */
-/*   Updated: 2025/11/03 18:59:12 by pifourni         ###   ########.fr       */
+/*   Created: 2025/11/03 18:21:11 by pifourni          #+#    #+#             */
+/*   Updated: 2025/11/03 18:58:23 by pifourni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-
-int	ft_isalpha(unsigned char c);
-int	ft_isdigit(unsigned char c);
-int ft_isalnum(unsigned char c);
-int	ft_isascii(unsigned char c);
-
-#endif
+int	ft_isascii(unsigned char c)
+{
+	if (c < 128)
+	{
+		return (1);
+	}
+	return (0);
+}
