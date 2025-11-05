@@ -6,14 +6,16 @@
 /*   By: pifourni <pifourni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 10:48:40 by pifourni          #+#    #+#             */
-/*   Updated: 2025/11/05 11:45:32 by pifourni         ###   ########.fr       */
+/*   Updated: 2025/11/05 22:51:07 by pifourni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strnstr(const char *haystack, const char *needle, unsigned int n)
+#include "libft.h"
+
+char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
 {
-	unsigned int	i;
-	unsigned int	j;
+	size_t	i;
+	size_t	j;
 
 	if (*needle == '\0')
 		return ((char *)(haystack));
