@@ -6,7 +6,7 @@
 #    By: pifourni <pifourni@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/06 00:39:50 by pifourni          #+#    #+#              #
-#    Updated: 2025/11/06 13:10:23 by pifourni         ###   ########.fr        #
+#    Updated: 2025/11/06 13:13:30 by pifourni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
  
@@ -38,15 +38,15 @@ SRC = ./ft_isalpha.c \
 	  ./ft_atoi.c \
 	  ./ft_calloc.c \
 	  ./ft_strdup.c \
-	  ./main.c
+#	  ./main.c
 OBJ = $(SRC:.c=.o)
-NAME = libft.out#libft.a
+NAME = libft.a
 
 all: $(NAME)
 	
 $(NAME): $(OBJ)
-	$(CC) -o $(NAME) $+ $(LIB)
-#	ar -rsc $(NAME) $(OBJ)
+#	$(CC) -o $(NAME) $+ $(LIB)
+	ar -rsc $(NAME) $(OBJ)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -o $@ -c $<
