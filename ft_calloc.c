@@ -1,40 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pifourni <pifourni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/04 16:57:40 by pifourni          #+#    #+#             */
-/*   Updated: 2025/11/06 11:27:05 by pifourni         ###   ########.fr       */
+/*   Created: 2025/11/06 10:27:41 by pifourni          #+#    #+#             */
+/*   Updated: 2025/11/06 11:28:36 by pifourni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest, const char *src, size_t dsize)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
 	size_t	i;
-	size_t	j;
-	size_t	res;
+	void	*res;
 
+	if (nmemb != 0 && size > ((size_t)-1) / nmemb)
+	{
+		return (NULL);
+	}
+	res = malloc(nmemb * size);
+	if (res == NULL)
+	{
+		return (res);
+	}
 	i = 0;
-	j = 0;
-	while (dest[i] != '\0' && i < dsize)
+	while (i < nmemb * size)
 	{
+		((unsigned char *)res)[i] = 0;
 		i++;
 	}
-	res = i;
-	if (res >= dsize)
-	{
-		return (dsize + ft_strlen(src));
-	}
-	while (src[j] != '\0' && i + 1 < dsize)
-	{
-		dest[i] = src[j];
-		i++;
-		j++;
-	}
-	dest[i] = '\0';
-	return (res + ft_strlen(src));
+	return (res);
 }

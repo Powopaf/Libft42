@@ -3,13 +3,13 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pifourni <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: pifourni <pifourni@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/08/20 10:11:48 by pifourni          #+#    #+#              #
-#    Updated: 2025/11/06 00:15:49 by pifourni         ###   ########.fr        #
+#    Created: 2025/11/06 00:39:50 by pifourni          #+#    #+#              #
+#    Updated: 2025/11/06 00:40:35 by pifourni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
+ 
 .PHONY: all clean fclean re
 
 CC = cc
@@ -36,6 +36,7 @@ SRC = ./ft_isalpha.c \
 	  ./ft_memcmp.c \
 	  ./ft_strnstr.c \
 	  ./ft_atoi.c \
+	  ./ft_calloc.c \
 	  ./main.c
 OBJ = $(SRC:.c=.o)
 NAME = libft.out#libft.a
