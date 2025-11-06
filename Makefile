@@ -6,7 +6,7 @@
 #    By: pifourni <pifourni@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/06 00:39:50 by pifourni          #+#    #+#              #
-#    Updated: 2025/11/06 00:40:35 by pifourni         ###   ########.fr        #
+#    Updated: 2025/11/06 13:10:23 by pifourni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
  
@@ -37,6 +37,7 @@ SRC = ./ft_isalpha.c \
 	  ./ft_strnstr.c \
 	  ./ft_atoi.c \
 	  ./ft_calloc.c \
+	  ./ft_strdup.c \
 	  ./main.c
 OBJ = $(SRC:.c=.o)
 NAME = libft.out#libft.a
