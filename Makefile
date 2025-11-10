@@ -6,11 +6,11 @@
 #    By: pifourni <pifourni@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/06 00:39:50 by pifourni          #+#    #+#              #
-#    Updated: 2025/11/09 14:55:58 by pifourni         ###   ########.fr        #
+#    Updated: 2025/11/10 11:34:49 by pifourni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
  
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus
 
 CC = cc
 LIB =
@@ -50,12 +50,25 @@ SRC = ./ft_isalpha.c \
 	  ./ft_putendl_fd.c \
 	  ./ft_putnbr_fd.c \
 
-OBJ = $(SRC:.c=.o)
+SRC_B = ./ft_lstnew.c \
+		./ft_lstadd_front.c \
+		./ft_lstsize.c \
+		./ft_lstlast.c \
+		./ft_lstadd_back.c \
+		./ft_lstdelone.c \
+		./ft_lstclear.c \
+		./ft_lstiter.c \
+		./ft_lstmap.c \
 
+OBJ = $(SRC:.c=.o)
+OBJ_B = $(SRC_B:.c=.o)
 NAME = libft.a
 
 all: $(NAME)
 	
+bonus: $(OBJ) $(OBJ_B)
+	ar -rsc $(NAME) $(OBJ) $(OBJ_B)
+
 $(NAME): $(OBJ)
 	ar -rsc $(NAME) $(OBJ)
 
@@ -64,6 +77,7 @@ $(NAME): $(OBJ)
 
 clean:
 	rm $(OBJ)
+	rm -f $(OBJ_B)
 
 fclean: clean
 	rm $(NAME)
