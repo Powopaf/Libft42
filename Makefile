@@ -6,7 +6,7 @@
 #    By: pifourni <pifourni@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/06 00:39:50 by pifourni          #+#    #+#              #
-#    Updated: 2025/11/10 11:48:37 by pifourni         ###   ########.fr        #
+#    Updated: 2025/11/10 13:46:10 by pifourni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
  
@@ -63,13 +63,12 @@ SRC_B = ./ft_lstnew.c \
 
 OBJ = $(SRC:.c=.o)
 OBJ_B = $(SRC_B:.c=.o)
-NAME = libft.out
+NAME = libft.a
 
 all: $(NAME)
 	
 bonus: $(OBJ) $(OBJ_B)
-	$(CC) -o $(NAME) $+ $(LIB)
-#	ar -rsc $(NAME) $(OBJ) $(OBJ_B)
+	ar -rsc $(NAME) $(OBJ) $(OBJ_B)
 
 $(NAME): $(OBJ)
 	ar -rsc $(NAME) $(OBJ)
